@@ -26,15 +26,5 @@ async function watchUsers (){
 
 window.onload = () => {
   watchUsers ()
-   watchPokemon()
+   
 }
-
-   async function watchPokemon(){
-    let pokemonResponse = await fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=20')
-
-     let pokemons = await pokemonResponse.json().results
-
-    for(let pokemon of pokemons){
-       document.querySelector('section').innerHTML += `<div>${pokemon}</div>`
-     }
-   }
