@@ -26,15 +26,15 @@ async function watchUsers (){
 
 window.onload = () => {
   watchUsers ()
-  // watchPokemon()
+   watchPokemon()
 }
 
-//  async function watchPokemon(){
-//    let pokemonResponse = await fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=20')
+   async function watchPokemon(){
+    let pokemonResponse = await fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=20')
 
-//    let pokemons = await pokemonResponse.json()
+     let pokemons = await pokemonResponse.json().results
 
-//    for(let i = 0;i <pokemons.length;i++){
-//      document.querySelector('section').innerHTML += `<div>${pokemons[i]}</div>`
-//    }
-//  }
+    for(let pokemon of pokemons){
+       document.querySelector('section').innerHTML += `<div>${pokemon}</div>`
+     }
+   }
